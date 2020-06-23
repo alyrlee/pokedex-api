@@ -6,10 +6,12 @@ const cors = require('cors');
 const POKEDEX = require('./pokedex.json');
 
 const app = express();
+//ecd229bb-76c1-4f4f-8c19-2ccbc7e82155
 
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'tiny' : 'common'));
 app.use(cors());
 // app.use(helmet());
+
 
 app.use(function validateBearerToken(req, res, next) {
   const apiToken = process.env.API_TOKEN;
